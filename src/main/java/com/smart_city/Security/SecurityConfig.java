@@ -54,16 +54,21 @@ public class SecurityConfig{
 	            		.requestMatchers("/login", "/api/tourism/cities/**").permitAll()
 	            		.requestMatchers("/api/auth/login").permitAll()
 	            		 .requestMatchers("/api/auth/register").permitAll()
+	            		 .requestMatchers("/api/disease/**").permitAll()
 	                .requestMatchers("/api/tourism/feedback").permitAll() // Allow public access
 	                .requestMatchers("/api/tourism/destinations/**").permitAll() 
 	                .anyRequest().authenticated() // Require authentication for all other requests
 	            )
-	            .formLogin(form -> form
-	                .loginPage("/login") // Custom login page
-	                .permitAll()  // Allow access to the login page
-	            )
-	            .logout(logout -> logout.permitAll());  // Allow logout
-
+//	            .formLogin(form -> form
+//	            		
+//	                .loginPage("/login") // Custom login page
+//	                .permitAll()  // Allow access to the login page
+//	            )
+//	            .logout(logout -> logout.permitAll());  // Allow logout
+	            
+	            .httpBasic().disable() // Disable HTTP Basic Auth
+	            .formLogin().disable() // Disable form-based login
+	            .logout().disable(); 
 	        return http.build();
 	    }
 	    // Define CORS configuration

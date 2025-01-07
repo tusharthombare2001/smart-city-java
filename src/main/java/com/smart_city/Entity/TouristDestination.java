@@ -31,23 +31,6 @@ public class TouristDestination {
 		}
 		
 		
-
-	
-		
-
-		/**
-		 * @param id
-		 * @param name
-		 * @param category
-		 * @param historical
-		 * @param timings
-		 * @param entryFee
-		 * @param bestTimeToVisit
-		 * @param imageUrl
-		 * @param videoUrl
-		 * @param city
-		 * @param tripDate
-		 */
 		public TouristDestination(Long id, String name, String category, String historical, String timings,
 				double entryFee, String bestTimeToVisit, String imageUrl, String videoUrl, String city,
 				LocalDate tripDate) {
